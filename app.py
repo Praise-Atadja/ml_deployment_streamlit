@@ -1,10 +1,10 @@
 import streamlit as st
 import pandas as pd
+import sklearn
 from sklearn.preprocessing import LabelEncoder
 from sklearn.preprocessing import MinMaxScaler
 import joblib
-import pickle
-import numpy as np
+
 
 # Load the model and encoder
 model = joblib.load("random_forest.pkl")
@@ -60,18 +60,17 @@ def main():
 
 # Collect user input
     st.subheader("Please Fill in Your Details")
-    A1_Score = st.number_input(
-        "A1 Score", min_value=0, max_value=1, step=1)
-    A2_Score = st.number_input(
-        "A2 Score", min_value=0, max_value=1, step=1)
-    A3_Score = st.number_input("A3 Score", min_value=0, max_value=1, step=1)
-    A4_Score = st.number_input("A4 Score", min_value=0, max_value=1, step=1)
-    A5_Score = st.number_input("A5 Score", min_value=0, max_value=1, step=1)
-    A6_Score = st.number_input("A6 Score", min_value=0, max_value=1, step=1)
-    A7_Score = st.number_input("A7 Score", min_value=0, max_value=1, step=1)
-    A8_Score = st.number_input("A8 Score", min_value=0, max_value=1, step=1)
-    A9_Score = st.number_input("A9 Score", min_value=0, max_value=1, step=1)
-    A10_Score = st.number_input("A10 Score", min_value=0, max_value=1, step=1)
+    A1_Score = st.selectbox("A1 Score", [0, 1])
+    A2_Score = st.selectbox("A2 Score", [0, 1])
+    A3_Score = st.selectbox("A3 Score", [0, 1])
+    A4_Score = st.selectbox("A4 Score", [0, 1])
+    A5_Score = st.selectbox("A5 Score", [0, 1])
+    A6_Score = st.selectbox("A6 Score", [0, 1])
+    A7_Score = st.selectbox("A7 Score", [0, 1])
+    A8_Score = st.selectbox("A8 Score", [0, 1])
+    A9_Score = st.selectbox("A9 Score", [0, 1])
+    A10_Score = st.selectbox("A10 Score", [0, 1])
+
     age = st.selectbox("Age", list(range(4, 64)))
     gender = st.radio("Gender", ["Male", "Female"])
     ethnicity_options = [
