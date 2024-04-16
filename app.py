@@ -1,9 +1,11 @@
 import streamlit as st
 import pandas as pd
+import sklearn
 from sklearn.preprocessing import LabelEncoder
 from sklearn.preprocessing import MinMaxScaler
 import joblib
 import pickle
+import numpy as np
 
 # Load the model and encoder
 model = joblib.load("random_forest.pkl")
